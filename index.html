@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pamela Paguidopon | Social Media Strategist</title>
+    <style>
+        :root {
+            --bg-color: #0d0f17;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --primary-accent: #7c3aed;
+            --secondary-accent: #3b82f6;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 0 1.5rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-accent);
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+        }
+
+        .nav-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 3rem 0;
+            text-align: center;
+        }
+
+        .badge {
+            background: rgba(124, 58, 237, 0.15);
+            color: #a78bfa;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto 2.5rem auto;
+        }
+
+        /* Metrics Grid */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .metric-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .metric-card h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+            background: linear-gradient(135deg, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .metric-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Case Study Section */
+        .section-title {
+            font-size: 1.8rem;
+            margin: 4rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .case-study {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .case-study-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-study-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-box h4 {
+            color: #a78bfa;
+            margin-bottom: 0.75rem;
+        }
+
+        .case-box ul {
+            list-style: none;
+        }
+
+        .case-box ul li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .case-box ul li::before {
+            content: "•";
+            color: var(--primary-accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 2rem;
+            border-radius: 12px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+        }
+
+        .service-card ul li {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* Work Matrix Table */
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 4rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: rgba(255, 255, 255, 0.02);
+            color: #a78bfa;
+        }
+
+        td {
+            color: var(--text-muted);
+        }
+
+        /* Tools Chips */
+        .tools-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+
+        .tool-chip {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-main);
+        }
+
+        /* CTA Footer */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(59, 130, 246, 0.1));
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            margin-bottom: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+            .case-study { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <div class="logo">PAMELA <span>P.</span></div>
+            <a href="#contact" class="nav-btn">Book Strategy Call</a>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <span class="badge">Digital Marketing & Social Media Strategist</span>
+            <h1>Transforming Social Profiles into High-Converting Growth Engines</h1>
+            <p>I help brands scale their online presence, boost organic engagement, and convert views into sales through targeted creative storytelling and data-driven Meta strategies.</p>
+            <a href="#contact" class="nav-btn">Start Growing Your Brand</a>
+        </section>
+
+        <!-- Proven Metrics Bar -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h2>+430%</h2>
+                <p>Monthly IG Views Increase</p>
+            </div>
+            <div class="metric-card">
+                <h2>8x</h2>
+                <p>Facebook Follower Scaling</p>
+            </div>
+            <div class="metric-card">
+                <h2>+145%</h2>
+                <p>Direct Message Inquiries</p>
+            </div>
+            <div class="metric-card">
+                <h2>46.6K+</h2>
+                <p>Total Organic Views Generated</p>
+            </div>
+        </div>
+
+        <!-- Case Study -->
+        <h2 class="section-title">Featured Growth Case Study</h2>
+        <div class="case-study">
+            <div class="case-study-header">
+                <h3>Multi-Platform Scaling (Facebook & Instagram)</h3>
+            </div>
+            <div class="case-study-grid">
+                <div class="case-box">
+                    <h4>The Challenge</h4>
+                    <p style="color: var(--text-muted); font-size: 0.95rem;">Low brand reach, stagnant follower growth, and minimal direct customer messaging conversion.</p>
+                </div>
+                <div class="case-box">
+                    <h4>Strategic Execution</h4>
+                    <ul>
+                        <li>Created short-form video reels and carousels targeting non-followers.</li>
+                        <li>Standardized graphic design & visual branding consistency.</li>
+                        <li>Implemented reactive community engagement & lead generation ads.</li>
+                    </ul>
+                </div>
+                <div class="case-box">
+                    <h4>Key Business Results</h4>
+                    <ul>
+                        <li><strong>Instagram:</strong> Scaled to 3.6K+ followers with +430% monthly views growth.</li>
+                        <li><strong>Facebook:</strong> Scaled audience 8x to 9,100+ total followers.</li>
+                        <li><strong>Conversion:</strong> Generated 46.6K total views and +145% increase in direct messages.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Section -->
+        <h2 class="section-title">Core Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>📱 Social Media Management</h3>
+                <ul>
+                    <li>• Multi-Platform Content Scheduling</li>
+                    <li>• Community Management & Engagement</li>
+                    <li>• Monthly Performance & Growth Reporting</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🎬 Video & Graphic Design</h3>
+                <ul>
+                    <li>• Reels, Shorts & TikTok Video Editing</li>
+                    <li>• High-Converting Carousel & Graphic Design</li>
+                    <li>• Visual Branding & Corporate Identity</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>🎯 Paid Meta Campaigns</h3>
+                <ul>
+                    <li>• Basic Meta Ads Setup (FB & IG)</li>
+                    <li>• Ad Creative Design & Conversion Copywriting</li>
+                    <li>• Direct Message Lead Generation Campaigns</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Experience Matrix -->
+        <h2 class="section-title">Experience & Deliverables</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Niche / Category</th>
+                        <th>Clients</th>
+                        <th>Deliverables Created</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hospitality & Food</td>
+                        <td>HEG Cafe, Coffee Spot</td>
+                        <td>Brand Strategy, Menus, Loyalty Cards, Promotional Carousels</td>
+                    </tr>
+                    <tr>
+                        <td>Events & Entertainment</td>
+                        <td>HEG Bahrain, Pinoy Popstar 2026</td>
+                        <td>Campaign Posters, Lyric Videos, Event Reels, Tickets</td>
+                    </tr>
+                    <tr>
+                        <td>Corporate Services</td>
+                        <td>Elevator Services</td>
+                        <td>Corporate Identity Supplies, B2B Calling Cards, Posters</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tech Stack -->
+        <h2 class="section-title">Tools & Software Stack</h2>
+        <div class="tools-wrapper">
+            <span class="tool-chip">Canva</span>
+            <span class="tool-chip">CapCut</span>
+            <span class="tool-chip">Buffer</span>
+            <span class="tool-chip">Metricool</span>
+            <span class="tool-chip">Meta Business Suite</span>
+            <span class="tool-chip">Notion</span>
+        </div>
+
+        <!-- Call To Action -->
+        <section class="cta-section" id="contact">
+            <h2>Ready to Turn Views into Revenue?</h2>
+            <p>Let's discuss how we can scale your brand's presence and drive actual direct sales.</p>
+            <a href="mailto:your-email@example.com" class="nav-btn">Get In Touch</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2026 Pamela Paguidopon. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
